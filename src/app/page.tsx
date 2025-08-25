@@ -83,13 +83,27 @@ export default function Home() {
         </motion.p>
 
         {/* Floating + Shimmering Button */}
-        <motion.div variants={floating} animate="animate" className="mt-10">
-          <button className="relative px-8 py-3 text-lg font-semibold text-white rounded-full overflow-hidden shadow-lg">
-            <span className="absolute inset-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500 animate-gradient-x"></span>
-            <span className="absolute inset-0 bg-white opacity-10 blur-sm"></span>
-            <span className="relative z-10">✨ Notify Me ✨</span>
-          </button>
-        </motion.div>
+
+<motion.div
+  animate={{
+    y: [0, -20, 0],
+    rotate: [0, 10, -10, 0],
+  }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="mt-10"
+>
+  <button className="relative px-8 py-3 text-lg font-semibold text-white rounded-full overflow-hidden shadow-lg">
+    <span className="absolute inset-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500 animate-gradient-x"></span>
+    <span className="absolute inset-0 bg-white opacity-10 blur-sm"></span>
+    <span className="relative z-10">✨ Notify Me ✨</span>
+  </button>
+</motion.div>
+
+
       </div>
 
       {/* Extra Tailwind animations */}
